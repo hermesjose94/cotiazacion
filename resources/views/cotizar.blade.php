@@ -13,30 +13,31 @@
 
 @section('content')
   <div class="modal fade" id="modal-default">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 id="title-modal"class="modal-title">Cotización</h4>
-        </div>
-        <div class="modal-body">
-          <ul class="products-list product-list-in-box" id="body-list">
-          </ul>
-          <div class="box-footer no-padding">
-            <ul class="nav nav-pills nav-stacked">
-              <li><a>Sub Total <span class="pull-right text-green" id="Sub">0</span></a></li>
-              <li><a>IVA 12% <span class="pull-right text-green" id="IVA">0</span></a></li>
-              <li><a>Total <span class="pull-right text-green" id="Total">0</span></a></li>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 id="title-modal"class="modal-title">Cotización</h4>
+            <p>Cotización de {{Auth::user()->empresa->nb_nombre}} RIF {{Auth::user()->empresa->nb_rif}} para {{Auth::user()->nb_nombre}} {{Auth::user()->nb_apellido}} RUC {{Auth::user()->nb_RUC}}</p>
+          </div>
+          <div class="modal-body">
+            <ul class="products-list product-list-in-box" id="body-list">
             </ul>
+            <div class="box-footer no-padding">
+              <ul class="nav nav-pills nav-stacked">
+                <li><a>Sub Total <span class="pull-right text-green" id="Sub">0</span></a></li>
+                <li><a>IVA 12% <span class="pull-right text-green" id="IVA">0</span></a></li>
+                <li><a>Total <span class="pull-right text-green" id="Total">0</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Volver</button>
           </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Volver</button>
-        </div>
       </div>
-    </div>
   </div>
   <div class="box">
     <div class="box-body">
